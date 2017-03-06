@@ -1,0 +1,66 @@
+sublime安装插件的教程记录
+第一步当然是先安装sublime,直接官网下载.
+https://www.sublimetext.com/3
+纯净版
+然后安装sublime ctrl,步骤如下:
+进入sublime,打开控制台(ctrl+`)
+
+import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+复制代码,稍微等一小会.
+
+点开首选项,package control选项就有了.
+鼠标点击打开-->输入install搜索到 install package-->鼠标点击打开
+
+开始尽情安装插件吧~!
+推荐的插件
+auto Prefixr
+Prefixr，CSS3 私有前缀自动补全插件，显然也很有用哇
+
+JS Format
+一个JS代码格式化插件。
+
+SublimeLinter
+一个支持lint语法的插件，可以高亮linter认为有错误的代码行，也支持高亮一些特别的注释，比如“TODO”，这样就可以被快速定位。（IntelliJ IDEA的TODO功能很赞，这个插件虽然比不上，但是也够用了吧）
+
+Sublime CodeIntel
+代码自动提示
+
+Bracket Highlighter
+类似于代码匹配，可以匹配括号，引号等符号内的范围。
+
+TrailingSpacer 高亮显示多余的空格和Tab
+
+Alignment 等号对齐
+按Ctrl+Alt+A，可以将凌乱的代码以等号为准左右对其，适合有代码洁癖的朋友。
+
+CSScomb CSS属性排序
+有 时候看看自己写的CSS文件，会不会觉得属性很乱查找不易维护难？CSScomb可以按照一定的CSS属性排序规则，将杂乱无章的CSS属性进行重新排 序。选中要排序的CSS代码，按Ctrl+Shift+C，即可对CSS属性重新排序了，代码从此简洁有序易维护，如果不款选代码则插件将排序文件中所有 的CSS属性。当然，可以自己自定义CSS属性排序规则，打开插件目录里的CSScomb.sublime-settings文件，更改里面的CSS属性 顺序就行了。因为这个插件使用PHP写的，要使他工作需要在环境变量中添加PHP的路径，具体请看github上的说明。
+
+SublimeTmpl 快速生成文件模板
+一 直都很奇怪为什么sublime text 3没有新建文件模板的功能，像html头部的DTD声明每次都要复制粘贴。用SublimeTmpl这款插件终于可以解脱了，SublimeTmpl能新 建html、css、javascript、php、python、ruby六种类型的文件模板，所有的文件模板都在插件目录的templates文件夹 里，可以自定义编辑文件模板。
+SublimeTmpl默认的快捷键
+ctrl+alt+h html
+ctrl+alt+j javascript
+ctrl+alt+c css
+ctrl+alt+p php
+ctrl+alt+r ruby
+ctrl+alt+shift+p python
+如 果想要新建其他类型的文件模板的话，先自定义文件模板方在templates文件夹里，再分别打开Default (Windows).sublime-keymap、Default.sublime-commands、Main.sublime-menu、 SublimeTmpl.sublime-settings这四个文件照着里面的格式自定义想要新建的类型，这里就详细介绍了，请各位自己折腾哈~
+
+Emmet html/CSS快速编辑（原名Zen Coding）
+Zen Coding估计大家都不会陌生，前不久改名为Emmet了，
+虽 然用Emmet编辑html很快，但是要用好用快它需要付出不小的学习成本，学习的曲线有点陡峭，以至于让新手好奇而畏惧，我看看热闹就行了，感觉编辑得 再快思维跟不上也是白搭，对我来说sublime text 3自带的代码提示够用了。网上有很多教学视频，有兴趣学习的可以去了解下。
+解决PyV8的问题》在github上搜索并下载pyv8-linux32.zip，解压到PyV8，放置到sublime的插件目录下，重启sublime
+ 
+ 
+
+snippets
+Snippets，你一定已经听说了，可以帮你快速书写代码。但它不是像上面提到的插件那样使用缩写，它是重用代码块以节省您的时间。你甚至可以创建自己的代码段，这完全取决于你自己。sin
+ 
+移除sublime已经安装的插件
+1.ctr+shift+P,输入package
+2.查找remove package
+3.输入你要删除的package
+4.回车，OK
+资料来自于:
+http://www.cnblogs.com/lizunicon/p/3829404.html
